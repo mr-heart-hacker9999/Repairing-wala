@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Our Services - Repairing Wala</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            /* background: #f5f5f5;
+      color: #333; */
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+
+        }
+
+        header {
+            margin-top: 60px;
+            background: #222;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 0.95rem;
+            color: #aaa;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .card h3 {
+            margin-bottom: 0.8rem;
+            color: #222;
+        }
+
+        .how-to-check {
+            padding: 2rem;
+            background: #fff;
+        }
+
+        .how-to-check h2 {
+            margin-bottom: 1rem;
+            color: #444;
+        }
+
+        .how-to-check ul {
+            list-style: square;
+            margin-left: 1.2rem;
+        }
+
+        .faq-section {
+            padding: 2rem;
+            background: #f0f0f0;
+        }
+
+        .faq {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .faq h4 {
+            cursor: pointer;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq p {
+            display: none;
+            font-size: 0.95rem;
+            color: #444;
+            padding-bottom: 0.5rem;
+        }
+
+        .calculator {
+            text-align: center;
+            margin: 2rem;
+        }
+
+        .calculator button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 0.7rem 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .popup h3 {
+            margin-bottom: 1rem;
+        }
+
+        .popup button {
+            margin-top: 1rem;
+            background: crimson;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .tips-carousel {
+            padding: 2rem;
+            background: #fff;
+        }
+
+        .tips-carousel h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .swiper {
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .swiper-slide {
+            background: #eee;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1rem;
+            min-height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer {
+            background: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <nav>
+            <div class="navbar-logo">Repairing Wala</div>
+            <div class="navbar-links" id="navbarLinks">
+                <a href="index.html" class="navbar-link active">Home</a>
+                <a href="components.html" class="navbar-link">Components</a>
+                <a href="appliances.html" class="navbar-link">Appliances</a>
+                <a href="about.html" class="navbar-link">About</a>
+                <a href="contact.html" class="navbar-link">Contact</a>
+            </div>
+            <div class="navbar-menu" id="navbarMenu" onclick="toggleMenu()">
+                <div class="menu-bar bar1"></div>
+                <div class="menu-bar bar2"></div>
+                <div class="menu-bar bar3"></div>
+            </div>
+        </nav>
+    </section>
+
+
+    <header>
+        <h1>Repairing Wala - Online Services</h1>
+        <p>We provide online support only. No physical repair services offered.</p>
+    </header>
+
+    <section class="services">
+        <div class="card">
+            <h3>Appliance Issue Diagnosis</h3>
+            <p>Tell us your appliance issue, and we’ll help you diagnose the faulty component online.</p>
+        </div>
+        <div class="card">
+            <h3>Electronics Repair Guides</h3>
+            <p>Access step-by-step guides and videos for repairing circuit boards, TVs, fans, amplifiers, and more.</p>
+        </div>
+        <div class="card">
+            <h3>Component Testing Help</h3>
+            <p>Learn how to use a multimeter to test resistors, capacitors, diodes, and transistors.</p>
+        </div>
+        <div class="card">
+            <h3>Live Chat Support</h3>
+            <p>Get help from our technician team via online chat for troubleshooting electronics issues.</p>
+        </div>
+    </section>
+
+    <section class="how-to-check">
+        <h2>How to Check if a Component is Damaged:</h2>
+        <ul>
+            <li>Check for burns, cracks, or discoloration.</li>
+            <li>Use a multimeter to test voltage or resistance.</li>
+            <li>Compare values with datasheet or standard charts.</li>
+            <li>For capacitors, test ESR using ESR meter.</li>
+            <li>Test diodes/transistors with continuity function.</li>
+        </ul>
+    </section>
+
+    <section class="calculator">
+        <button onclick="openPopup()">Component Value Calculator</button>
+    </section>
+
+    <div class="popup" id="popup">
+        <h3>Online Component Value Checker</h3>
+        <p>Use color codes or markings to calculate resistor/capacitor values. This tool is under development.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <section class="tips-carousel">
+        <h2>Repair Tips & Tricks</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Always discharge capacitors before testing.</div>
+                <div class="swiper-slide">Use flux while soldering for better joints.</div>
+                <div class="swiper-slide">Never test a circuit while plugged in.</div>
+                <div class="swiper-slide">Check fuses before anything else.</div>
+                <div class="swiper-slide">Document before dismantling appliances.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="faq">
+            <h4>Why don’t you offer offline repair?</h4>
+            <p>To keep costs low and reach more users digitally, we only offer online help and guides.</p>
+        </div>
+        <div class="faq">
+            <h4>How can I test a resistor?</h4>
+            <p>Use a multimeter in resistance mode. Compare with the color code value.</p>
+        </div>
+        <div class="faq">
+            <h4>Do you sell replacement parts?</h4>
+            <p>No, but we can guide you where to buy online with correct specs.</p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Repairing Wala | All rights reserved. | Online Support Only
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // FAQ toggle
+        const faqs = document.querySelectorAll('.faq h4');
+        faqs.forEach(faq => {
+            faq.addEventListener('click', () => {
+                const p = faq.nextElementSibling;
+                p.style.display = p.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        // Popup
+        function openPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        // Swiper initialization
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            slidesPerView: 1,
+            spaceBetween: 10,
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

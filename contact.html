@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact - Repairing Wala</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    
+
+    <style>
+        /* Reset & base */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #f1f5f9;
+            min-height: 100vh;
+            /* padding: 2rem 1rem; */
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Centered container with max width */
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: #1e293b;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            padding: 2rem 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        /* Left section containing both forms side-by-side */
+        .forms-wrapper {
+            flex: 1 1 600px;
+            display: flex;
+            gap: 2rem;
+            animation: slideInLeft 1s ease forwards;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Each form styling */
+        form {
+            background: #334155;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            flex: 1 1 280px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        form h3 {
+            color: #facc15;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            letter-spacing: 0.05em;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            color: #e2e8f0;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background: #475569;
+            border: none;
+            border-radius: 8px;
+            color: #f1f5f9;
+            font-size: 1rem;
+            padding: 0.7rem 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #94a3b8;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            background-color: #64748b;
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-group button {
+            margin-top: auto;
+            padding: 0.75rem;
+            background: #38bdf8;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            color: #0f172a;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(56, 221, 248, 0.4);
+        }
+
+        .form-group button:hover {
+            background-color: #0ea5e9;
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.6);
+        }
+
+        /* Cartoon image styling */
+        .cartoon-image {
+            flex: 1 1 400px;
+            text-align: center;
+            animation: float 4s ease-in-out infinite;
+            align-self: flex-start;
+        }
+
+        .cartoon-image img {
+            max-width: 100%;
+            max-height: 400px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(56, 221, 248, 0.5);
+            user-select: none;
+        }
+
+        /* Map container */
+        .map-container {
+            margin-top: 3rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            height: 350px;
+            animation: fadeIn 1.5s ease forwards;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Animations */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes slideInLeft {
+            0% {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                padding: 2rem;
+            }
+
+            .forms-wrapper {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .cartoon-image {
+                order: 2;
+                margin-top: 2rem;
+                align-self: center;
+            }
+
+            .cartoon-image img {
+                max-height: 300px;
+            }
+
+            .map-container {
+                height: 250px;
+            }
+        }
+
+        .contactHeading {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #facc15;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        /* text area text counter  */
+
+        
+    </style>
+</head>
+
+<body>
+    
+<!-- Navbar section  -->
+
+  <nav>
+    <div class="navbar-logo">Repairing Wala</div>
+    <div class="navbar-links" id="navbarLinks">
+      <a href="index.html" class="navbar-link active">Home</a>
+      <a href="components.html" class="navbar-link">Components</a>
+      <a href="appliances.html" class="navbar-link">Appliances</a>
+      <a href="about.html" class="navbar-link">About</a>
+      <a href="contact.html" class="navbar-link">Contact</a>
+    </div>
+    <div class="navbar-menu" id="navbarMenu" onclick="toggleMenu()">
+      <div class="menu-bar bar1"></div>
+      <div class="menu-bar bar2"></div>
+      <div class="menu-bar bar3"></div>
+    </div>
+  </nav>
+
+
+
+    <div class="contactHeading">Contact Us</div>
+    <main class="container">
+        <!-- Left: Two forms side by side -->
+        <section class="forms-wrapper">
+            <!-- Send Message Form -->
+            <form id="message-form">
+                <h3>Send Message</h3>
+                <div class="form-group">
+                    <label for="name1">Name</label>
+                    <input id="name1" type="text" placeholder="Your full name" required />
+                </div>
+                <div class="form-group">
+                    <label for="email1">Email</label>
+                    <input id="email1" type="email" placeholder="Your email address" required />
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" maxlength="200" rows="5" placeholder="Type your message..."></textarea>
+                    <div id="char-count" class="char-bubble">0 / 200</div>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+
+            <!-- Request Call Form -->
+            <form id="call-form">
+                <h3>Request a Call</h3>
+                <div class="form-group">
+                    <label for="name2">Name</label>
+                    <input id="name2" type="text" placeholder="Your full name" required />
+                </div>
+                <div class="form-group">
+                    <label for="phone2">Phone Number</label>
+                    <input id="phone2" type="tel" placeholder="Your phone number" required />
+                </div>
+                <div class="form-group">
+                    <button type="submit">Request a Call</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Cartoon Image on the right -->
+        <section class="cartoon-image">
+            <img src="Images/contact person.gif" alt="Contact Cartoon" />
+        </section>
+
+        <!-- Google Map below -->
+        <section class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d894.3276142727182!2d83.07035382735864!3d26.284033818369277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399107da83512c9d%3A0x839bd983a9be1f41!2z4KSc4KSo4KWH4KS44KSw4KWAIOCkrOClgeClm-ClgeCksOCljeCklywg4KSJ4KSk4KWN4KSk4KSwIOCkquCljeCksOCkpuClh-CktiAyMjQxNzY!5e0!3m2!1shi!2sin!4v1753690010017!5m2!1shi!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </main>
+
+    <!-- footer section  -->
+
+<footer class="glass-footer">
+  <div class="footer-content">
+    <div class="footer-section company">
+      <h2>Repairing Wala</h2>
+      <p>Expert in electrical & electronic appliances repair. Fast, trusted, and affordable services at your fingertips.</p>
+    </div>
+
+    <div class="footer-section links">
+      <h3>Quick Links</h3>
+      <ul>
+       <li><a href="index.html">Home</a></li>
+        <li><a href="components.html">Components</a></li>
+        <li><a href="appliances.html">Appliances</a></li>
+        <li><a href="about.html">About </a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section contact">
+      <h3>Connect with Us</h3>
+      <div class="footer-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Repairing Wala | Powered with 💡 and 💻</p>
+  </div>
+</footer>
+
+
+
+<script src="script.js"></script>
+</body>
+
+</html>

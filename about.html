@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Repairing Wala</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #0f172a;
+      color: #f1f5f9;
+      /* line-height: 1.6; */
+      overflow-x: hidden;
+    }
+
+    .about-hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 3rem 1rem;
+      background: #1e293b;
+    }
+
+    .about-text {
+      flex: 1;
+      padding: 2rem;
+    }
+
+    .about-text h1 {
+      font-size: 2.8rem;
+      color: #38bdf8;
+      margin-bottom: 1rem;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      color: #e2e8f0;
+      margin-bottom: 1rem;
+    }
+
+    .about-img {
+      flex: 1;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .about-img img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      transition: transform 0.4s ease;
+    }
+
+    .about-img img:hover {
+      transform: scale(1.05);
+    }
+
+    .features {
+      padding: 3rem 1rem;
+      text-align: center;
+      background-color: #0f172a;
+    }
+
+    .features h2 {
+      color: #facc15;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .feature {
+      background: #1e293b;
+      padding: 2rem;
+      border-radius: 10px;
+      transition: 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+      background-color: #334155;
+    }
+
+    .feature h3 {
+      color: #38bdf8;
+      margin-bottom: 0.8rem;
+    }
+
+    .feature p {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+    }
+
+    @media (max-width: 768px) {
+      .about-text h1 {
+        font-size: 2rem;
+      }
+
+      .about-hero {
+        flex-direction: column-reverse;
+      }
+
+      .about-text,
+      .about-img {
+        padding: 1rem;
+      }
+    }
+
+      .more-about {
+    background-color: #1e293b;
+    padding: 3rem 1rem;
+    text-align: center;
+    animation: fadeInUp 1s ease-in-out;
+  }
+
+  .more-about h2 {
+    color: #4ade80;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .more-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    background-color: #334155;
+  }
+
+  .card h4 {
+    color: #facc15;
+    margin-bottom: 0.8rem;
+  }
+
+  .card p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+
+
+
+    .owner-section {
+    background-color: #0f172a;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+
+  .owner-section h2 {
+    font-size: 2rem;
+    color: #4ade80;
+    margin-bottom: 2rem;
+  }
+
+  .owner-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background-color: #1e293b;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    max-width: 1000px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .owner-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100%;
+    border: 4px solid #4ade80;
+  }
+
+  .owner-info {
+    max-width: 600px;
+    color: #cbd5e1;
+    text-align: left;
+  }
+
+  .owner-info h3 {
+    color: #facc15;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .owner-info p {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .owner-card {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .owner-info {
+      text-align: center;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar section  -->
+
+
+    <nav>
+      <div class="navbar-logo">Repairing Wala</div>
+      <div class="navbar-links" id="navbarLinks">
+        <a href="index.html" class="navbar-link ">Home</a>
+        <a href="components.html" class="navbar-link">Components</a>
+        <a href="appliances.html" class="navbar-link">Appliances</a>
+        <a href="about.html" class="navbar-link">About</a>
+        <a href="contact.html" class="navbar-link">Contact</a>
+      </div>
+      <div class="navbar-menu" id="navbarMenu" onclick="toggleMenu()">
+        <div class="menu-bar bar1"></div>
+        <div class="menu-bar bar2"></div>
+        <div class="menu-bar bar3"></div>
+      </div>
+    </nav>
+
+
+
+  <section class="about-hero">
+    <div class="about-text">
+      <h1>We Are Repairing Wala</h1>
+      <p>We specialize in breathing life back into your favorite electronics – from broken chargers and fans to malfunctioning TVs and laptops.</p>
+      <p>Our mission is simple: provide affordable, fast, and expert repair service to homes and businesses with trust and transparency.</p>
+    </div>
+    <div class="about-img">
+      <img src="Images/repairing image.jpg" alt="Electronics Repair Image" />
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>Why Choose Us?</h2>
+    <div class="features-grid">
+      <div class="feature">
+        <h3>🧑‍🔧 Expert Technicians</h3>
+        <p>We fix all devices with precision – from mobile phones to industrial machines.</p>
+      </div>
+      <div class="feature">
+        <h3>💰 Free of Cost</h3>
+        <p>No any costs. We provide all services free of charge.</p>
+      </div>
+      <div class="feature">
+        <h3>⚡Better Service</h3>
+        <p>We value your time – we try our best to ensure most devices are repaired the same day!</p>
+      </div>
+      <div class="feature">
+        <h3>🔧 All-In-One Solution</h3>
+        <p>From diagnostics to repairs, all solutions are available here.</p>
+      </div>
+    </div>
+  </section>
+  <section class="more-about">
+  <h2>More About Us</h2>
+  <div class="more-grid">
+    <div class="card">
+      <h4>🛠️ Our Expertise</h4>
+      <p>With over 10+ years of experience, we’ve repaired 5000+ devices across India.</p>
+    </div>
+    <div class="card">
+      <h4>🏠 Home Services</h4>
+      <p>We offer hassle-free pickup and delivery services at your doorstep.</p>
+    </div>
+    <div class="card">
+      <h4>📱 Support & Tracking</h4>
+      <p>Track your repair status online and connect with our support 24x7.</p>
+    </div>
+    <div class="card">
+      <h4>🌱 Eco-Friendly</h4>
+      <p>We recycle responsibly and aim to reduce e-waste through smart repairs.</p>
+    </div>
+  </div>
+</section>
+
+<section class="owner-section">
+  <h2>Meet the Owner</h2>
+  <div class="owner-card">
+    <img src="Images/owner.png" alt="Owner Photo">
+    <div class="owner-info">
+      <h3>Divyansh Maurya</h3>
+      <p>Founder & Head Technician of <strong>Repairing Wala</strong></p>
+      <p>Divyansh is a skilled electronics expert with a deep passion for fixing gadgets and solving hardware-level issues. With over 5+ years of experience, he has earned trust from hundreds of happy clients and is dedicated to delivering the best repair service at the most affordable price.</p>
+      <p>"Every device has a second chance – I just help bring it back to life!"</p>
+    </div>
+  </div>
+</section>
+
+<!-- footer section  -->
+
+
+
+<footer class="glass-footer">
+  <div class="footer-content">
+    <div class="footer-section company">
+      <h2>Repairing Wala</h2>
+      <p>Expert in electrical & electronic appliances repair. Fast, trusted, and affordable services at your fingertips.</p>
+    </div>
+
+    <div class="footer-section links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="components.html">Components</a></li>
+        <li><a href="appliances.html">Appliances</a></li>
+        <li><a href="about.html">About </a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section contact">
+      <h3>Connect with Us</h3>
+      <div class="footer-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Repairing Wala | Powered with 💡 and 💻</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

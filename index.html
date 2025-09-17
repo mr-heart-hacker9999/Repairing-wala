@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repairing Wala - E-Services</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <style>
+    :root {
+      --primary: #00b4d8;
+      --dark: #0f172a;
+      --light: #e2f4ff;
+      --accent: #38bdf8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--dark);
+      color: var(--light);
+      /* line-height: 1.6; */
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(to bottom right, #001d3d, #003566);
+      padding: 100px 20px;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+    }
+
+    .hero .cta {
+      margin-top: 30px;
+      padding: 12px 28px;
+      background: var(--primary);
+      border: none;
+      border-radius: 50px;
+      font-weight: bold;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero .cta:hover {
+      background: #0077b6;
+    }
+
+    /* Services Section */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      transition: 0.3s;
+      border-left: 5px solid var(--accent);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      background: #2d3748;
+    }
+
+    .service-card h3 {
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    /* Swiper Sections */
+    .swiper {
+      width: 100%;
+      padding: 20px 0;
+    }
+
+    .swiper-slide {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 20px;
+      color: #fff;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    .servicesSwiper .swiper-slide {
+      height: auto;
+    }
+
+
+    .swiper-slide img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .swiper-slide p {
+      font-weight: 600;
+      margin-top: 5px;
+    }
+
+    /* FAQ */
+    .faq-item {
+      background: #1e293b;
+      margin-bottom: 16px;
+      padding: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .faq-item h4 {
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .faq-item p {
+      margin-top: 10px;
+      display: none;
+      font-size: 0.95rem;
+    }
+
+    .faq-item.open p {
+      display: block;
+    }
+
+    /* Floating Call/WhatsApp */
+    .floating-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 999;
+    }
+
+    .floating-btn a {
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0, 180, 216, 0.4);
+      transition: 0.3s;
+    }
+
+    .floating-btn a:hover {
+      background: #0077b6;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- navbar Section  -->
+
+
+  <nav>
+    <div class="navbar-logo">Repairing Wala</div>
+    <div class="navbar-links" id="navbarLinks">
+      <a href="index.html" class="navbar-link active">Home</a>
+      <a href="components.html" class="navbar-link">Components</a>
+      <a href="appliances.html" class="navbar-link">Appliances</a>
+      <a href="about.html" class="navbar-link">About</a>
+      <a href="contact.html" class="navbar-link">Contact</a>
+
+
+
+    </div>
+    <div class="navbar-menu" id="navbarMenu" onclick="toggleMenu()">
+      <div class="menu-bar bar1"></div>
+      <div class="menu-bar bar2"></div>
+      <div class="menu-bar bar3"></div>
+    </div>
+  </nav>
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Repairing Wala</h1>
+    <p>Expert repair tutorials and services for Electric and Electronics items, IoT devices, microcontrollers, and
+      embedded systems – all in one place.</p>
+    <button class="cta">Explore Services</button>
+  </section>
+
+  <!-- Services -->
+  <!-- Services -->
+  <section>
+    <h2 style="text-align:center; margin-bottom:30px;">Our Expert Services</h2>
+    <div class="swiper servicesSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide service-card">
+          <h3>IoT Devices Repair</h3>
+          <p>Step-by-step solutions to troubleshoot and repair smart home and industrial IoT systems.</p>
+        </div>
+        <div class="swiper-slide service-card">
+          <h3>Microcontroller Solutions</h3>
+          <p>Complete guidance for programming and fixing popular MCUs like Arduino, ESP32, STM32 etc.</p>
+        </div>
+        <div class="swiper-slide service-card">
+          <h3>Embedded Systems Debug</h3>
+          <p>Find hardware and software faults in embedded electronics with real-world examples.</p>
+        </div>
+        <div class="swiper-slide service-card">
+          <h3>Electric Appliance Repair</h3>
+          <p>Support for fixing fans, heaters, lighting systems, microwaves, mixers, Led bulbs and more. </p>
+        </div>
+        <div class="swiper-slide service-card">
+          <h3>PCB Troubleshooting</h3>
+          <p>Debugging multilayer circuits with component-level insights such as capacitors, diodes, inductors, and
+            more. </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Gallery -->
+  <section>
+    <h2 style="text-align:center; margin-bottom:20px;">Repair Gallery</h2>
+    <div class="swiper gallerySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="components_images/capacitor.jpg" alt="">
+          <p>Capacitor</p>
+        </div>
+        <div class="swiper-slide"><img src="components_images/diode.webp" alt="">
+          <p>Diode</p>
+        </div>
+        <div class="swiper-slide"><img src="components_images/resistor.jpg" alt="">
+          <p>Resistor</p>
+        </div>
+        <div class="swiper-slide"><img src="components_images/inductor.webp" alt="">
+          <p>Inductor</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section>
+    <h2 style="text-align:center; margin-bottom:20px;">What Our Users Say</h2>
+    <div class="swiper testimonialSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">"Best repair tutorials I've ever used! Fixed my ESP32 easily." - Aman</div>
+        <div class="swiper-slide">"Professional support, fast help. Great platform!" - Neha</div>
+        <div class="swiper-slide">"Detailed step-by-step for embedded fixes. Highly recommend." - Rajesh</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <h2 style="text-align:center; margin-bottom:30px;">Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h4>Can I fix IoT devices at home? <span>+</span></h4>
+      <p>Yes, with the right tools and guidance from our tutorials, you can fix many common issues yourself.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Do you offer help for beginners? <span>+</span></h4>
+      <p>Absolutely! Our tutorials are designed from beginner to expert level with practical examples.</p>
+    </div>
+    <div class="faq-item">
+      <h4>What devices are supported? <span>+</span></h4>
+      <p>We cover Arduino, Raspberry Pi, ESP32, STM32, and various other embedded platforms.</p>
+    </div>
+  </section>
+
+  <!-- Call / WhatsApp Buttons -->
+  <div class="floating-btn">
+    <a href="tel:+919876543210">📞 Call Expert</a>
+    <a href="https://wa.me/917379678031" target="_blank">💬 WhatsApp</a>
+  </div>
+
+  <!-- Comment Section -->
+
+
+  <h2 style="text-align: center; margin-bottom: 30px;">Comments</h2>
+  <div class="comments">
+
+    <!-- Comment box -->
+    <div class="comment-box">
+      <textarea placeholder="Write a comment..."></textarea>
+      <button type="button">Post</button>
+    </div>
+
+    <!-- Comment list -->
+    <div class="comment">
+      <div class="avatar">AM</div>
+      <div class="bubble">
+        <div><span class="name">Aman Mishra</span><span class="time"> · 2h ago</span></div>
+        <p>This service was really helpful. Highly recommend it!</p>
+        <div class="actions">
+          <a href="#"><span class="heart">❤️</span><span class="like-count">12</span></a>
+          <a href="#">Report</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comment">
+      <div class="avatar">JD</div>
+      <div class="bubble">
+        <div><span class="name">Jai Dev</span><span class="time"> · 30m ago</span></div>
+        <p>I had a small issue but it was resolved quickly.</p>
+        <div class="actions">
+          <a href="#"><span class="heart">❤️</span><span class="like-count">7</span></a>
+          <a href="#">Report</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="comment">
+      <div class="avatar">RK</div>
+      <div class="bubble">
+        <div><span class="name">Ritika Kapoor</span><span class="time"> · 15m ago</span></div>
+        <p>Great experience! The team was very responsive.</p>
+        <div class="actions">
+          <a href="#"><span class="heart">❤️</span><span class="like-count">5</span></a>
+          <a href="#">Report</a>
+        </div>
+      </div>
+    </div>
+    <div class="comment">
+      <div class="avatar">RK</div>
+      <div class="bubble">
+        <div><span class="name">Ritika Kapoor</span><span class="time"> · 15m ago</span></div>
+        <p>Great experience! The team was very responsive.</p>
+        <div class="actions">
+          <a href="#"><span class="heart">❤️</span><span class="like-count">5</span></a>
+          <a href="#">Report</a>
+        </div>
+      </div>
+    </div>
+    <div class="comment">
+      <div class="avatar">RK</div>
+      <div class="bubble">
+        <div><span class="name">Ritika Kapoor</span><span class="time"> · 15m ago</span></div>
+        <p>Great experience! The team was very responsive.</p>
+        <div class="actions">
+          <a href="#"><span class="heart">❤️</span><span class="like-count">5</span></a>
+          <a href="#">Report</a>
+        </div>
+      </div>
+    </div>
+    <div class="comment">
+      <div class="avatar">RK</div>
+      <div class="bubble">
+        <div><span class="name">Ritika Kapoor</span><span class="time"> · 15m ago</span></div>
+        <p>Great experience! The team was very responsive.</p>
+        <div class="actions">
+          <a href="#"><span class="heart">❤️</span><span class="like-count">5</span></a>
+          <a href="#">Report</a>
+        </div>
+      </div>
+    </div>
+    <div class="comment">
+      <div class="avatar">RK</div>
+      <div class="bubble">
+        <div><span class="name">Ritika Kapoor</span><span class="time"> · 15m ago</span></div>
+        <p>Great experience! The team was very responsive.</p>
+        <div class="actions">
+          <a href="#"><span class="heart">❤️</span><span class="like-count">5</span></a>
+          <a href="#">Report</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- footer section  -->
+
+
+
+  <footer class="glass-footer">
+    <div class="footer-content">
+      <div class="footer-section company">
+        <h2>Repairing Wala</h2>
+        <p>Expert in electrical & electronic appliances repair. Fast, trusted, and affordable services at your
+          fingertips.</p>
+      </div>
+
+      <div class="footer-section links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Components</a></li>
+          <li><a href="#">Appliances</a></li>
+          <li><a href="#">About </a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section contact">
+        <h3>Connect with Us</h3>
+        <div class="footer-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Repairing Wala | Powered with 💡 and 💻</p>
+    </div>
+  </footer>
+
+
+
+
+
+
+  <!-- SwiperJS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <script>
+    // Swiper for Gallery
+    var gallerySwiper = new Swiper(".gallerySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        640: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+
+    // Swiper for Testimonials
+    var testimonialSwiper = new Swiper(".testimonialSwiper", {
+      direction: 'horizontal',
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+    });
+
+    // Swiper for Services (horizontal scroll)
+    var servicesSwiper = new Swiper(".servicesSwiper", {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+      },
+      breakpoints: {
+        640: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+
+
+
+    // FAQ Toggle
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html>

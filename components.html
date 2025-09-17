@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electronic Components</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(145deg, #0f172a, #1e293b);
+      color: #f1f5f9;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      width: 100%;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+
+    .search-box {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .search-box input {
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: none;
+      width: 280px;
+      font-size: 1rem;
+    }
+
+    .search-box button {
+      padding: 12px 20px;
+      background-color: #38bdf8;
+      color: #0f172a;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .search-box button:hover {
+      background-color: #0ea5e9;
+    }
+
+    .components-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      width: 100%;
+      padding: 30px 5%;
+    }
+
+    .component-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, background 0.3s;
+    }
+
+    .component-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .component-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .component-title {
+      font-size: 1.4rem;
+      color: #facc15;
+      margin-bottom: 10px;
+    }
+
+    .component-desc {
+      font-size: 0.95rem;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .search-box {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .search-box input {
+        width: 90%;
+      }
+
+      .search-box button {
+        width: 60%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<!-- Navbar section  -->
+
+  <nav>
+    <div class="navbar-logo">Repairing Wala</div>
+    <div class="navbar-links" id="navbarLinks">
+      <a href="index.html" class="navbar-link active">Home</a>
+      <a href="components.html" class="navbar-link">Components</a>
+      <a href="appliances.html" class="navbar-link">Appliances</a>
+      <a href="about.html" class="navbar-link">About</a>
+      <a href="contact.html" class="navbar-link">Contact</a>
+    </div>
+    <div class="navbar-menu" id="navbarMenu" onclick="toggleMenu()">
+      <div class="menu-bar bar1"></div>
+      <div class="menu-bar bar2"></div>
+      <div class="menu-bar bar3"></div>
+    </div>
+  </nav>
+
+
+
+  <header>
+    <h1>Explore Electronic Components</h1>
+    <div class="search-box">
+      <input type="text" placeholder="Search for a component..." />
+      <button>Search</button>
+    </div>
+  </header>
+
+  <section class="components-grid">
+    <div class="component-card">
+      <img src="components_images/resistor.jpg" alt="Resistor" class="component-img" />
+      <div class="component-title">Resistor</div>
+      <div class="component-desc">
+        Controls the flow of current. Used in almost every electronic circuit to limit and divide voltage.
+      </div>
+    </div>
+
+    <div class="component-card">
+      <img src="components_images/capacitor.jpg" alt="Capacitor" class="component-img" />
+      <div class="component-title">Capacitor</div>
+      <div class="component-desc">
+        Temporarily stores electric charge. Commonly used in power supply smoothing and timing circuits.
+      </div>
+    </div>
+
+    <div class="component-card">
+      <img src="components_images/Transister.jpg" alt="Transistor" class="component-img" />
+      <div class="component-title">Transistor</div>
+      <div class="component-desc">
+        Acts as an electronic switch or amplifier. It’s a building block of modern computers and devices.
+      </div>
+    </div>
+
+    <div class="component-card">
+      <img src="components_images/diode.webp" alt="Diode" class="component-img" />
+      <div class="component-title">Diode</div>
+      <div class="component-desc">
+        Allows current to flow in one direction. Used in power rectifiers and LED lighting systems.
+      </div>
+    </div>
+
+    <div class="component-card">
+      <img src="components_images/inductor.webp" alt="Inductor" class="component-img" />
+      <div class="component-title">Inductor</div>
+      <div class="component-desc">
+        Stores energy in a magnetic field when current flows. Common in filters and transformers.
+      </div>
+    </div>
+
+    <div class="component-card">
+      <img src="components_images/microcontroller.webp" alt="Microcontroller" class="component-img" />
+      <div class="component-title">Microcontroller</div>
+      <div class="component-desc">
+        Small computer on a chip. Controls other devices in embedded systems like washing machines, robots.
+      </div>
+    </div>
+  </section>
+
+
+  <!-- footer section   -->
+
+
+
+  <footer class="glass-footer">
+    <div class="footer-content">
+      <div class="footer-section company">
+        <h2>Repairing Wala</h2>
+        <p>Expert in electrical & electronic appliances repair. Fast, trusted, and affordable services at your
+          fingertips.</p>
+      </div>
+
+      <div class="footer-section links">
+        <h3>Quick Links</h3>
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="components.html">Components</a></li>
+        <li><a href="appliances.html">Appliances</a></li>
+        <li><a href="about.html">About </a></li>
+        <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section contact">
+        <h3>Connect with Us</h3>
+        <div class="footer-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Repairing Wala | Powered with 💡 and 💻</p>
+    </div>
+  </footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
